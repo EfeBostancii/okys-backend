@@ -27,11 +27,11 @@ public class OkysapiApplication {
 
 	@GetMapping("/")
 	public String home() {
-		return "✅ OKYS - Öğrenci Kayıt ve Yönetim Sistemi Backend\n\n"
+		return "OKYS - Öğrenci Kayıt ve Yönetim Sistemi Backend\n\n"
 				+ "Bu API, Java Spring Boot kullanılarak geliştirilmiştir. Öğrenci, ders, eğitmen, kayıt ve not işlemlerini yönetmek amacıyla REST mimarisiyle tasarlanmıştır.\n\n"
-				+ "🔗 Temel Endpointler:\n\n"
+				+ "Temel Endpointler:\n\n"
 
-				+ "👨‍🎓 Öğrenciler (/api/students)\n"
+				+ "Öğrenciler (/api/students)\n"
 				+ "- GET /api/students                   → Tüm öğrencileri getirir\n"
 				+ "- GET /api/students/{id}             → Belirli öğrenciyi getirir\n"
 				+ "- POST /api/students                 → Yeni öğrenci ekler\n"
@@ -41,7 +41,7 @@ public class OkysapiApplication {
 				+ "- GET /api/students/search?name=Efe  → İsme göre arar\n"
 				+ "- GET /api/students/filterByName?name=Efe → Stream ile filtreleme\n\n"
 
-				+ "👨‍🏫 Eğitmenler (/api/instructors)\n"
+				+ "Eğitmenler (/api/instructors)\n"
 				+ "- GET /api/instructors               → Tüm eğitmenleri getirir\n"
 				+ "- POST /api/instructors              → Yeni eğitmen ekler\n"
 				+ "- PUT /api/instructors/{id}          → Eğitmeni günceller\n"
@@ -49,7 +49,7 @@ public class OkysapiApplication {
 				+ "- GET /api/instructors/sorted        → İsme göre sıralar\n"
 				+ "- GET /api/instructors/search?name=Ali → İsme göre arar\n\n"
 
-				+ "📚 Dersler (/api/courses)\n"
+				+ "Dersler (/api/courses)\n"
 				+ "- GET /api/courses                   → Tüm dersleri listeler\n"
 				+ "- POST /api/courses                  → Yeni ders ekler\n"
 				+ "- PUT /api/courses/{id}              → Dersi günceller\n"
@@ -57,14 +57,14 @@ public class OkysapiApplication {
 				+ "- GET /api/courses/sorted            → İsme göre sıralar\n"
 				+ "- GET /api/courses/search?name=veri  → Ders adına göre arar\n\n"
 
-				+ "📝 Kayıtlar (/api/enrollments)\n"
+				+ "Kayıtlar (/api/enrollments)\n"
 				+ "- GET /api/enrollments               → Tüm kayıtları getirir\n"
 				+ "- POST /api/enrollments              → Yeni kayıt oluşturur\n"
 				+ "- DELETE /api/enrollments/{id}       → Kaydı siler\n"
 				+ "- GET /api/enrollments/by-student/{id} → Öğrencinin kayıtlarını getirir\n"
 				+ "- GET /api/enrollments/by-course/{id}  → Dersin öğrencilerini getirir\n\n"
 
-				+ "🎓 Notlar (/api/grades)\n"
+				+ "Notlar (/api/grades)\n"
 				+ "- GET /api/grades                    → Tüm notları getirir\n"
 				+ "- POST /api/grades                   → Yeni not ekler\n"
 				+ "- PUT /api/grades/{id}?score=90      → Notu günceller\n"
@@ -73,7 +73,7 @@ public class OkysapiApplication {
 				+ "- GET /api/grades/topscore           → En yüksek notu getirir\n"
 				+ "- GET /api/grades/simulateProcessing → Arka planda sahte işlem başlatır\n\n"
 
-				+ "📬 Daha fazla örnek istek ve test senaryosu için README.md dosyasına göz atabilirsiniz.\n";
+				+ "Tüm endpoint'lerin açıklamaları ve Postman ile test edilebilecek örnek istekler için README.md dosyasını inceleyebilirsiniz.\n";
 	}
 
 }
