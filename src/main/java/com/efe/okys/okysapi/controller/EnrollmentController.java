@@ -13,7 +13,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 /*
- * Bu controller sınıfı, öğrenci-kurs kayıtlarını yönetiyor.
+ * Bu controller sınıfı,
+ * - Öğrenci-kurs kayıtlarını yönetir
  * Kullanılan Konular:
  * - REST API (Web Programlama)
  * - Katmanlı Mimari (Controller-Repository)
@@ -44,10 +45,9 @@ public class EnrollmentController {
     // Burada JPA ile ilişkili veriler çekiliyor: öğrenci ve kursu id ile alıp eşliyoruz
     // Ayrıca kayıt kontrolü yapıyoruz: öğrenci daha önce kayıtlıysa hata fırlatılıyor
     @PostMapping
-    public Enrollment createEnrollment(@RequestParam Long studentId,
-                                       @RequestParam Long courseId) {
-        Student student = studentRepository.findById(studentId).orElseThrow();
-        Course course = courseRepository.findById(courseId).orElseThrow();
+    public Enrollment createEnrollment(@RequestBody EnrollmentRequest request) {
+        Student student = studentRepository.findById(request.getStudentId()).orElseThrow();
+        Course course = courseRepository.findById(request.getCourseId()).orElseThrow();
 
         boolean exists = enrollmentRepository.existsByStudentAndCourse(student, course);
         if (exists) {
@@ -77,5 +77,27 @@ public class EnrollmentController {
     public List<Enrollment> getByCourse(@PathVariable Long courseId) {
         Course course = courseRepository.findById(courseId).orElseThrow();
         return enrollmentRepository.findByCourse(course);
+    }
+
+    // JSON ile gelen istekleri almak için kullanılan iç sınıf (Request DTO)
+    public static class EnrollmentRequest {
+        private Long studentId;
+        private Long courseId;
+
+        public Long getStudentId() {
+            return studentId;
+        }
+
+        public void setStudentId(Long studentId) {
+            this.studentId = studentId;
+        }
+
+        public Long getCourseId() {
+            return courseId;
+        }
+
+        public void setCourseId(Long courseId) {
+            this.courseId = courseId;
+        }
     }
 }
