@@ -17,7 +17,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class OkysapiApplication {
 
 	public static void main(String[] args) {
-		// Uygulama buradan başlatılır
 		SpringApplication.run(OkysapiApplication.class, args);
 	}
 }
