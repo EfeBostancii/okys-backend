@@ -27,13 +27,6 @@ public class OkysapiApplication {
 
 	@GetMapping("/")
 	public String home() {
-		return "OKYS Backend API (Spring Boot)\n\n"
-				+ "Örnek endpointler:\n"
-				+ "/api/students → Öğrenciler\n"
-				+ "/api/instructors → Eğitmenler\n"
-				+ "/api/courses → Dersler\n"
-				+ "/api/enrollments → Kayıtlar\n"
-				+ "/api/grades → Notlar\n\n"
-				+ "Detaylı kullanım ve örnek test istekleri için README.md dosyasını inceleyebilirsiniz.";
+		return "OKYS Backend AP. Detaylı kullanım ve örnek test istekleri için README.md dosyasını inceleyebilirsiniz.";
 	}
 }
