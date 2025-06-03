@@ -37,12 +37,11 @@ public class GradeController {
     }
 
     // Yeni bir not ekliyoruz
-    // Notlar, ilgili kayıt (Enrollment) üzerinden oluşturuluyor – JPA ilişkisi burada devrede
+    // Notlar, ilgili kayıt (Enrollment) üzerinden oluşturuluyor – JPA ilişkisi
     @PostMapping
-    public Grade createGrade(@RequestParam Long enrollmentId,
-                             @RequestParam double score) {
-        Enrollment enrollment = enrollmentRepository.findById(enrollmentId).orElseThrow();
-        Grade grade = new Grade(enrollment, score);
+    public Grade createGrade(@RequestBody GradeRequest request) {
+        Enrollment enrollment = enrollmentRepository.findById(request.getEnrollmentId()).orElseThrow();
+        Grade grade = new Grade(enrollment, request.getScore());
         return gradeRepository.save(grade);
     }
 
@@ -94,4 +93,24 @@ public class GradeController {
         }
     }
 
+    public static class GradeRequest {
+        private Long enrollmentId;
+        private double score;
+
+        public Long getEnrollmentId() {
+            return enrollmentId;
+        }
+
+        public void setEnrollmentId(Long enrollmentId) {
+            this.enrollmentId = enrollmentId;
+        }
+
+        public double getScore() {
+            return score;
+        }
+
+        public void setScore(double score) {
+            this.score = score;
+        }
+    }
 }
