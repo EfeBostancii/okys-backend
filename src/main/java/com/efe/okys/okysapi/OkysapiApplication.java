@@ -27,6 +27,6 @@ public class OkysapiApplication {
 
 	@GetMapping("/")
 	public String home() {
-		return "OKYS Backend AP. Detaylı kullanım ve örnek test istekleri için README.md dosyasını inceleyebilirsiniz.";
+		return "Test: API Calisiyor";
 	}
 }
