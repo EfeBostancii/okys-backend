@@ -12,7 +12,7 @@ Bu proje Java Spring Boot kullanılarak geliştirilmiş bir öğrenci yönetim s
 - **Model Katmanı**: `Student`, `Course`, `Instructor`, `Enrollment`, `Grade` sınıfları veritabanı modelleridir.
 - **Repository Katmanı**: JPA ile temel veritabanı işlemleri (`findAll`, `save`, `deleteById`...) otomatik sağlanır.
 - **Controller Katmanı**: REST API endpointleri tanımlıdır. Her model için ayrı controller vardır.
-- **Veritabanı**: Railway platformunda PostgreSQL kullanılmaktadır.
+- **Veritabanı**: **Railway** platformunda **PostgreSQL** kullanılmaktadır.
 
 ---
 
