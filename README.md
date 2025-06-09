@@ -1,5 +1,4 @@
 # OKYS - Öğrenci Kayıt ve Yönetim Sistemi Backend
-**Not**: Hocam uygulama 500 MB bellek sınırıyla çalışıyor. Bu yüzden zaman zaman (yük yokken bile) deploy ettiğim domainde 502 hatası oluşabiliyor. Böyle bir durumda bana Teams’ten yazarsanız eğer uygulamayı yeniden başlatabilirim. Teşekkürler.
 
 ---
 
