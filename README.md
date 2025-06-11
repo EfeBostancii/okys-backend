@@ -13,6 +13,8 @@ Bu proje Java Spring Boot kullanılarak geliştirilmiş bir öğrenci yönetim s
 - **Controller Katmanı**: REST API endpointleri tanımlıdır. Her model için ayrı controller vardır.
 - **Veritabanı**: **Railway** platformunda **PostgreSQL** kullanılmaktadır.
 
+## Deploy Linki: https://okys-backend-production.up.railway.app/
+
 ---
 
 ## Öğrenci Endpointleri `/api/students`
